@@ -7,14 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HelloComponent implements OnInit {
-  userName: string; 
+  userName: string;
+  defUserName: string = 'User';  
 
   constructor() {
-    this.userName = 'User'
+    this.userName = this.defUserName;
   }
   
   defaultUserName($e){
-    this.userName = 'User'
+    this.userName = this.defUserName;
   }
 
   ngOnInit() {

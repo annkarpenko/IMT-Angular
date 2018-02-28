@@ -1,0 +1,10 @@
+<div class="greeting">
+  <h1>Hello, {{ userName }}!</h1>
+  <div class="form-group row">
+      <label for="userName" class="col-2 col-form-label">User name</label>
+      <div class="col-8">
+        <input class="form-control" type="text" [(ngModel)] = "userName" id="userName">
+      </div>
+      <button class="btn" (click)="defaultUserName($event)">Clear</button>
+  </div>
+</div>

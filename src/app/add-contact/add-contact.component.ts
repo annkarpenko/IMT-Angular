@@ -17,7 +17,7 @@ export class AddContactComponent implements OnInit {
   ngOnInit() {
   }
 
-  saveContact(){
+  saveContact():void{
     this.onSaveContact.emit({
       name: this.nameNewContact,
       surname: this.surnameNewContact

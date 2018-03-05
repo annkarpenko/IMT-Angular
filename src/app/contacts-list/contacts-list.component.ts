@@ -14,7 +14,7 @@ export class ContactsListComponent implements OnInit {
 
   constructor() { }
 
-  sendInfoContact(contact){
+  sendInfoContact(contact):void{
     this.onContactClick.emit(contact);
   }
 

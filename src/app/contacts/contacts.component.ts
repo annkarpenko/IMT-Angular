@@ -19,7 +19,7 @@ export class ContactsComponent implements OnInit {
   ngOnInit() {
   }
 
-  showForm(form: string){
+  showForm(form: string):void{
     switch(form){
       case 'addForm':
         this.showAddForm = true;
@@ -30,12 +30,12 @@ export class ContactsComponent implements OnInit {
     }
   }
 
-  getContactInfo(contact: Contact){
+  getContactInfo(contact: Contact):void{
     this.showForm('detailForm');
     this.selectedContact = contact; 
   }
 
-  updateContactList(contact: Contact){
+  updateContactList(contact: Contact):void{
     this.contacts.push(contact);
     this.showAddForm = false;
   }

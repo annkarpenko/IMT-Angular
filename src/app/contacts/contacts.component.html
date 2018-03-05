@@ -1,0 +1,5 @@
+<app-contact-details *ngIf='showDetails' [contact]='selectedContact'></app-contact-details>
+<hr>
+<app-contacts-list (onContactClick) = 'getContactInfo($event)'></app-contacts-list>
+<button class='btn btn-primary col-md-2 offset-md-5' (click)='showForm("addForm")'>Add contact</button>
+<app-add-contact *ngIf='showAddForm' (onSaveContact)='updateContactList($event)'></app-add-contact>

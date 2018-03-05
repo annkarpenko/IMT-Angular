@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor = 'let contact of contacts' (click)='sendInfoContact(contact)'>
+    <b>{{ contact.name }} {{ contact.surname }}</b>
+  </li>
+</ul>
+

@@ -1,0 +1,11 @@
+<div class='col-md-8 offset-md-2'>
+  <label for="nameContact">Contact name</label>
+  <input type="text" class="form-control" [(ngModel)]='nameNewContact' id='nameContact'>
+  <label for="surnameContact">Contact surname</label>
+  <input type="text" class="form-control" [(ngModel)]='surnameNewContact' id='surnameContact'>
+  <div class="col-md-1 offset-md-5">
+      <br>
+      <button class='btn btn-primary' (click)='saveContact()'>Save contact</button>
+  </div>    
+</div>
+<br>

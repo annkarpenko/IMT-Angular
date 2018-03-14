@@ -52,8 +52,6 @@ export class ContactDetailsComponent {
       lessons: this.visitedLessons
     }
 
-    console.log(editContact);
-
     this.onEditContact.emit(editContact)
   }
 }

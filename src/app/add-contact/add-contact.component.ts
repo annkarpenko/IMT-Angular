@@ -10,6 +10,7 @@ export class AddContactComponent implements OnInit {
   nameNewContact: string = '';
   surnameNewContact: string = '';
 
+
   @Output() onSaveContact = new EventEmitter<Contact>();
 
   constructor() { }
@@ -18,9 +19,13 @@ export class AddContactComponent implements OnInit {
   }
 
   saveContact():void{
+    const id = Date.now();
+
     this.onSaveContact.emit({
+      id: id,
       name: this.nameNewContact,
-      surname: this.surnameNewContact
+      surname: this.surnameNewContact,
+      lessons: 0
     });
 
     this.nameNewContact='';

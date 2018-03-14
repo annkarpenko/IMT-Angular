@@ -35,9 +35,12 @@ export class ContactsComponent implements OnInit {
     this.selectedContact = contact; 
   }
 
-  updateContactList(contact: Contact):void{
+  saveNewContact(contact: Contact):void{
     this.contacts.push(contact);
     this.showAddForm = false;
+  }
+  editContact(contact:Contact){
+    
   }
   
 }

@@ -8,6 +8,7 @@ import { ContactDetailsComponent } from './contact-details/contact-details.compo
 import { ContactsListComponent } from './contacts-list/contacts-list.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { AddContactComponent } from './add-contact/add-contact.component';
+import { BackgroundDirective } from './directives/backgroundColor.directive';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { AddContactComponent } from './add-contact/add-contact.component';
     ContactDetailsComponent,
     ContactsListComponent,
     ContactsComponent,
-    AddContactComponent
+    AddContactComponent,
+    BackgroundDirective
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,19 @@
-<p class='text-center'>
-    Hello, {{contact.name | uppercase}} {{contact.surname | uppercase}}!
-</p>
+<p class='text-center'><b>{{titleForm | uppercase}}:</b></p>
+<div [ngClass]='{hideContactForm: !hideForm}'>
+        <p class='text-center'><b>Student:</b> {{contact.name}} {{contact.surname}} </p>
+        <p class='text-center'><b>Visited</b> {{contact.lessons}} lessons </p>
+        <button class="btn btn-primary col-xs-2 offset-md-4" (click)='openFormClick()'>Edit Contact</button>
+</div>
+
+<div class='col-md-8 offset-md-2' [ngClass]='{hideContactForm: hideForm}' >
+        <label for="nameContact">Contact name</label>
+        <input type="text" class="form-control" [(ngModel)]='nameContact' id='nameContact'>
+        <label for="surnameContact">Contact surname</label>
+        <input type="text" class="form-control" [(ngModel)]='surnameContact' id='surnameContact'>
+        <label for="visitedLessons">Visited lessons</label>
+        <input type="text" class="form-control" [(ngModel)]='visitedLessons' id='visitedLessons'>
+        <button class="btn btn-primary col-xs-2 offset-md-3" (click)='editContact(contact)'>Save</button>
+        <button class="btn btn-primary col-xs-2" (click)='onBtnCancelFormClick()'>Cancel</button>
+</div>      
+
+ 

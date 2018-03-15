@@ -1,6 +1,6 @@
 <p class='text-center'><b>{{titleForm | uppercase}}:</b></p>
 <div [ngClass]='{hideContactForm: !hideForm}'>
-        <p class='text-center'><b>Student:</b> {{contact.name}} {{contact.surname}} </p>
+        <p class='text-center' ><b>Student:</b> {{contact.name}} {{contact.surname}} </p>
         <p class='text-center'><b>Visited</b> {{contact.lessons}} lessons </p>
         <button class="btn btn-primary col-xs-2 offset-md-4" (click)='openFormClick()'>Edit Contact</button>
 </div>

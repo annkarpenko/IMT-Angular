@@ -52,6 +52,7 @@ export class ContactDetailsComponent {
       lessons: this.visitedLessons
     }
 
-    this.onEditContact.emit(editContact)
+    this.onEditContact.emit(editContact);
+    this.showForm(false);
   }
 }

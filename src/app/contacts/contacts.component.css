@@ -1,3 +1,7 @@
 div {
     float: left;
 }
+
+.addForm {
+    clear: both;
+}

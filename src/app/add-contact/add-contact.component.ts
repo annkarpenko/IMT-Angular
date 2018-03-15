@@ -1,22 +1,19 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import {Contact} from '../contacts/contacts';
+import { ContactService } from '../contact.service';
 
 @Component({
   selector: 'app-add-contact',
   templateUrl: './add-contact.component.html',
   styleUrls: ['./add-contact.component.css']
 })
-export class AddContactComponent implements OnInit {
+export class AddContactComponent {
   nameNewContact: string = '';
   surnameNewContact: string = '';
-
 
   @Output() onSaveContact = new EventEmitter<Contact>();
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
   saveContact():void{
     const id = Date.now();

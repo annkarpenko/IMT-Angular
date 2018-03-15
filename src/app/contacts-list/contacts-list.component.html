@@ -1,5 +1,5 @@
   <ul class='list-group'>
-    <li appBackgroundDirective class="list-group-item" *ngFor = 'let contact of contacts' (click)='sendInfoContact(contact)'>
+    <li appBackgroundDirective class="list-group-item" *ngFor = 'let contact of contacts' (click)='getInfoContact(contact)'>
       <b>{{ contact.name }} {{ contact.surname }}</b>
     </li>
   </ul>

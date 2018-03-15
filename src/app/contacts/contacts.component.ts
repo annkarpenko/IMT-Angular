@@ -1,5 +1,8 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
-import {CONTACTS, Contact} from './contacts';
+import { Component, OnInit, Input, Output, ViewChild } from '@angular/core';
+import { ContactService } from '../contact.service';
+import { Contact } from './contacts';
+import { ContactsListComponent } from '../contacts-list/contacts-list.component';
+
 
 @Component({
   selector: 'app-contacts',
@@ -9,16 +12,34 @@ import {CONTACTS, Contact} from './contacts';
 
 
 export class ContactsComponent implements OnInit {
-  contacts = CONTACTS;
   selectedContact: Contact;
   showAddForm: boolean = false;
   showDetails: boolean = false;
 
-  constructor() {}
+  @ViewChild(ContactsListComponent) 
+  private getListContact:ContactsListComponent;
+  constructor(private service: ContactService) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+    
+  getContactInfo(contact: Contact):void{
+    this.showForm('detailForm');
+    this.service.getContact(contact)
+      .subscribe((data) => this.selectedContact = data); 
   }
 
+  saveNewContact(contact: Contact):void{
+    this.service.addContact(contact)
+      .subscribe(() => this.getListContact.getContacts());
+    this.showAddForm = false;
+  }
+
+  editContact(contact:Contact):void{
+    this.service.updateContact(contact)
+      .subscribe(() => this.getListContact.getContacts());
+  }
+  
+  // switch не успела исправить на класс
   showForm(form: string):void{
     switch(form){
       case 'addForm':
@@ -29,18 +50,4 @@ export class ContactsComponent implements OnInit {
         break;
     }
   }
-
-  getContactInfo(contact: Contact):void{
-    this.showForm('detailForm');
-    this.selectedContact = contact; 
-  }
-
-  saveNewContact(contact: Contact):void{
-    this.contacts.push(contact);
-    this.showAddForm = false;
-  }
-  editContact(contact:Contact){
-    
-  }
-  
 }

@@ -3,10 +3,13 @@
 <div class="col-md-6">
     <br>
     <app-contacts-list (onContactClick) = 'getContactInfo($event)'></app-contacts-list>
+    <br>
     <button class='btn btn-primary col-xs-2 offset-md-4' (click)='showForm("addForm")'>Add contact</button>
 </div>
 <div class="col-md-5">
     <app-contact-details *ngIf='showDetails' [contact]='selectedContact' (onEditContact)='editContact($event)'></app-contact-details>
 </div>
+<div class='addForm'>
+    <app-add-contact *ngIf='showAddForm' (onSaveContact)='saveNewContact($event)'></app-add-contact>    
+</div>
 
-<app-add-contact *ngIf='showAddForm' (onSaveContact)='saveNewContact($event)'></app-add-contact>
